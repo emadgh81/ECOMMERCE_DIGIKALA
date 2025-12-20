@@ -17,9 +17,29 @@ import { PaymentGatewayModule } from './payment_gateway/payment_gateway.module';
 import { ProductAttributeValueModule } from './product_attribute_value/product_attribute_value.module';
 import { CategoryAttributeModule } from './category_attribute/category_attribute.module';
 import { AttributeModule } from './attribute/attribute.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    TypeOrmModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        type: 'postgres',
+        host: config.get<string>('DB_HOST'),
+        port: Number(config.get('DB_PORT')),
+        username: config.get<string>('DB_USERNAME'),
+        password: config.get<string>('DB_PASSWORD'),
+        database: config.get<string>('DB_NAME'),
+        autoLoadEntities: true,
+        synchronize: false,
+        migrations: [],
+        migrationsRun: false,
+      }),
+    }),
     UserModule,
     SellerModule,
     AuthModule,
