@@ -1,24 +1,23 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './user/user.module';
-import { SellerModule } from './seller/seller.module';
-import { AuthModule } from './auth/auth.module';
-import { CategoryModule } from './category/category.module';
-import { ReviweModule } from './reviwe/reviwe.module';
-import { CartModule } from './cart/cart.module';
-import { CartItemModule } from './cart_item/cart_item.module';
-import { ProductModule } from './product/product.module';
-import { OrderModule } from './order/order.module';
-import { OrderItemModule } from './order_item/order_item.module';
-import { PaymentModule } from './payment/payment.module';
-import { TransactionModule } from './transaction/transaction.module';
-import { PaymentRequestModule } from './payment_request/payment_request.module';
-import { PaymentVerfictionModule } from './payment_verfiction/payment_verfiction.module';
-import { PaymentGatewayModule } from './payment_gateway/payment_gateway.module';
-import { ProductAttributeValueModule } from './product_attribute_value/product_attribute_value.module';
-import { CategoryAttributeModule } from './category_attribute/category_attribute.module';
-import { AttributeModule } from './attribute/attribute.module';
+import { UserModule } from './Users/user/user.module';
+import { SellerModule } from './Users/seller/seller.module';
+import { AuthModule } from './Users/auth/auth.module';
+import { ReviweModule } from './Reviews/reviwe/reviwe.module';
+import { OrderModule } from './Orders/order/order.module';
+import { OrderItemModule } from './Orders/order_item/order_item.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProductVariantModule } from './Products/product_variant/product_variant.module';
+import { ProductAttributeModule } from './Products/product_attribute/product_attribute.module';
+import { ProductCategoryAttributeModule } from './Products/product_category_attribute/product_category_attribute.module';
+import { ProductAttributeValueModule } from './Products/product_attribute_value/product_attribute_value.module';
+import { PaymentGatewayModule } from './Payments/payment_gateway/payment_gateway.module';
+import { TransactionModule } from './Payments/transaction/transaction.module';
+import { PaymentModule } from './Payments/payment/payment.module';
+import { ProductModule } from './Products/product/product.module';
+import { CartItemModule } from './Carts/cart_item/cart_item.module';
+import { CartModule } from './Carts/cart/cart.module';
+import { ProductCategoryModule } from './Products/productـcategory/product_category.module';
 
 @Module({
   imports: [
@@ -43,7 +42,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     UserModule,
     SellerModule,
     AuthModule,
-    CategoryModule,
+    ProductCategoryModule,
     ReviweModule,
     CartModule,
     CartItemModule,
@@ -52,12 +51,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     OrderItemModule,
     PaymentModule,
     TransactionModule,
-    PaymentRequestModule,
-    PaymentVerfictionModule,
     PaymentGatewayModule,
     ProductAttributeValueModule,
-    CategoryAttributeModule,
-    AttributeModule,
+    ProductCategoryAttributeModule,
+    ProductAttributeModule,
+    ProductVariantModule,
   ],
   controllers: [],
   providers: [],
