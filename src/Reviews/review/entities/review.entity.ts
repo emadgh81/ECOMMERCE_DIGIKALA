@@ -12,7 +12,7 @@ import {
 } from 'typeorm';
 
 @Entity('review')
-export class Reviwe {
+export class Review {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 

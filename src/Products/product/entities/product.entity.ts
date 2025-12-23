@@ -1,7 +1,7 @@
 import { ProductAttributeValue } from 'src/Products/product_attribute_value/entities/product_attribute_value.entity';
 import { ProductVariant } from 'src/Products/product_variant/entities/product_variant.entity';
-import { ProductCategory } from 'src/Products/productـcategory/entities/product_category.entity';
-import { Reviwe } from 'src/Reviews/reviwe/entities/reviwe.entity';
+import { ProductCategory } from 'src/Products/product_category/entities/product_category.entity';
+
 import { Seller } from 'src/Users/seller/entities/seller.entity';
 import {
   Column,
@@ -14,6 +14,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Review } from 'src/Reviews/review/entities/review.entity';
 
 @Entity('product')
 export class Product {
@@ -58,8 +59,8 @@ export class Product {
   @OneToMany(() => ProductVariant, (variant) => variant.product)
   variants!: ProductVariant[];
 
-  @OneToMany(() => Reviwe, (review) => review.product)
-  reviews!: Reviwe[];
+  @OneToMany(() => Review, (review) => review.product)
+  reviews!: Review[];
 
   @OneToMany(() => ProductAttributeValue, (pav) => pav.product)
   attribute_values!: ProductAttributeValue[];

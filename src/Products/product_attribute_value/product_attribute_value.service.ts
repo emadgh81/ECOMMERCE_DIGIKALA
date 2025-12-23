@@ -16,7 +16,10 @@ export class ProductAttributeValueService {
     return `This action returns a #${id} productAttributeValue`;
   }
 
-  update(id: number, updateProductAttributeValueDto: UpdateProductAttributeValueDto) {
+  update(
+    id: number,
+    updateProductAttributeValueDto: UpdateProductAttributeValueDto,
+  ) {
     return `This action updates a #${id} productAttributeValue`;
   }
 

@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { UserModule } from './Users/user/user.module';
 import { SellerModule } from './Users/seller/seller.module';
 import { AuthModule } from './Users/auth/auth.module';
-import { ReviweModule } from './Reviews/reviwe/reviwe.module';
+import { ReviewModule } from './Reviews/review/review.module';
 import { OrderModule } from './Orders/order/order.module';
 import { OrderItemModule } from './Orders/order_item/order_item.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -17,7 +17,7 @@ import { PaymentModule } from './Payments/payment/payment.module';
 import { ProductModule } from './Products/product/product.module';
 import { CartItemModule } from './Carts/cart_item/cart_item.module';
 import { CartModule } from './Carts/cart/cart.module';
-import { ProductCategoryModule } from './Products/productـcategory/product_category.module';
+import { ProductCategoryModule } from './Products/product_category/product_category.module';
 
 @Module({
   imports: [
@@ -35,15 +35,13 @@ import { ProductCategoryModule } from './Products/productـcategory/product_cate
         database: config.get<string>('DB_NAME'),
         autoLoadEntities: true,
         synchronize: false,
-        migrations: [],
-        migrationsRun: false,
       }),
     }),
     UserModule,
     SellerModule,
     AuthModule,
     ProductCategoryModule,
-    ReviweModule,
+    ReviewModule,
     CartModule,
     CartItemModule,
     ProductModule,

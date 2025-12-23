@@ -1,5 +1,5 @@
 import { ProductAttribute } from 'src/Products/product_attribute/entities/product_attribute.entity';
-import { ProductCategory } from 'src/Products/productـcategory/entities/product_category.entity';
+import { ProductCategory } from 'src/Products/product_category/entities/product_category.entity';
 import {
   Column,
   CreateDateColumn,

@@ -1,7 +1,8 @@
 import { Cart } from 'src/Carts/cart/entities/cart.entity';
 import { RoleEnum } from 'src/common/enum/role.enum';
 import { Order } from 'src/Orders/order/entities/order.entity';
-import { Reviwe } from 'src/Reviews/reviwe/entities/reviwe.entity';
+import { Review } from 'src/Reviews/review/entities/review.entity';
+
 import { Seller } from 'src/Users/seller/entities/seller.entity';
 import {
   Column,
@@ -52,8 +53,8 @@ export class User {
   @OneToMany(() => Order, (order) => order.user)
   orders!: Order[];
 
-  @OneToMany(() => Reviwe, (review) => review.user)
-  reviews!: Reviwe[];
+  @OneToMany(() => Review, (review) => review.user)
+  reviews!: Review[];
 
   @OneToOne(() => Seller, (seller) => seller.user)
   seller?: Seller;
