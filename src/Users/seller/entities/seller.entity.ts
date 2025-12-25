@@ -23,8 +23,8 @@ export class Seller {
   @Column({ type: 'varchar', length: 100 })
   store_name!: string;
 
-  @Column({ type: 'decimal', nullable: true })
-  rating!: number;
+  @Column({ type: 'decimal', nullable: true, default: 0 })
+  rating?: number;
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at!: Date;
