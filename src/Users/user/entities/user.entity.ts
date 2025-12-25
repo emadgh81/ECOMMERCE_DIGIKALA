@@ -33,7 +33,7 @@ export class User {
   password!: string;
 
   @Column({ type: 'varchar', length: 15, nullable: true })
-  phone?: number;
+  phone?: string;
 
   @Column({ type: 'enum', enum: RoleEnum, default: RoleEnum.CUSTOMER })
   role!: RoleEnum;
