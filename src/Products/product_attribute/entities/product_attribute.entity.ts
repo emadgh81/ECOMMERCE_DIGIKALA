@@ -1,3 +1,4 @@
+import { AttributeDataType } from 'src/common/enum/attribute.datatype.enum';
 import { ProductAttributeOption } from 'src/Products/product_attribute_option/entities/product_attribute_option.entity';
 import { ProductAttributeValue } from 'src/Products/product_attribute_value/entities/product_attribute_value.entity';
 import {
@@ -18,8 +19,8 @@ export class ProductAttribute {
   @Column({ type: 'varchar', length: 100 })
   title!: string;
 
-  @Column({ type: 'varchar', length: 100 })
-  data_type!: string;
+  @Column({ type: 'enum', enum: AttributeDataType })
+  data_type!: AttributeDataType;
 
   @Column({ type: 'varchar', length: 100, nullable: true })
   unit?: string;
