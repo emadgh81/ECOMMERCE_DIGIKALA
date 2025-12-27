@@ -10,3 +10,4 @@ export interface ProductAttributeRepository {
   save(productAttribute: ProductAttribute): Promise<ProductAttribute>;
   remove(productAttribute: ProductAttribute): Promise<void>;
 }
+ 
