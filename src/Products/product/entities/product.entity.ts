@@ -31,9 +31,9 @@ export class Product {
   title!: string;
 
   @Column({ type: 'varchar', length: 100, nullable: true })
-  description!: string;
+  description?: string;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'decimal' })
   price!: number;
 
   @Column({ type: 'varchar', length: 100, nullable: true })
