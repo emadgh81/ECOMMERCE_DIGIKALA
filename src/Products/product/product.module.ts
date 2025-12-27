@@ -4,7 +4,7 @@ import { ProductController } from './product.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './entities/product.entity';
 import { ProductPostgresRepository } from './repository/product.repository';
-import { PRODUCT_REPOSITORY } from 'src/common/interfaces/Products/product.repository';
+import { PRODUCT_REPOSITORY } from 'src/common/interfaces/Products/product.repository.interface';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Product])],

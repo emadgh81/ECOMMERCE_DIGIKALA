@@ -6,12 +6,13 @@ import {
 } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+
+import { plainToInstance } from 'class-transformer';
+import { Product } from './entities/product.entity';
 import {
   PRODUCT_REPOSITORY,
   ProductRepository,
-} from 'src/common/interfaces/Products/product.repository';
-import { plainToInstance } from 'class-transformer';
-import { Product } from './entities/product.entity';
+} from 'src/common/interfaces/Products/product.repository.interface';
 
 @Injectable()
 export class ProductService {
