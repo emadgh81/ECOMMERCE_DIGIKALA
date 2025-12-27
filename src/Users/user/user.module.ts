@@ -4,7 +4,7 @@ import { UserController } from './user.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { UserPostgresRepository } from './repository/user.repository';
-import { USER_REPOSITORY } from 'src/common/interfaces/user_repository.interface';
+import { USER_REPOSITORY } from 'src/common/interfaces/Users/user.repository.interface';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User])],
@@ -12,7 +12,7 @@ import { USER_REPOSITORY } from 'src/common/interfaces/user_repository.interface
   providers: [
     UserService,
     UserPostgresRepository,
-    { provide: USER_REPOSITORY, useExisting: UserPostgresRepository },
+    { provide: USER_REPOSITORY, useClass: UserPostgresRepository },
   ],
   exports: [UserService, USER_REPOSITORY],
 })

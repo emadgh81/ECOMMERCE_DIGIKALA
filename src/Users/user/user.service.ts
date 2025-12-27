@@ -9,7 +9,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import {
   USER_REPOSITORY,
   UserRepository,
-} from 'src/common/interfaces/user_repository.interface';
+} from 'src/common/interfaces/Users/user.repository.interface';
 import * as bcrypt from 'bcrypt';
 import { plainToInstance } from 'class-transformer';
 import { User } from './entities/user.entity';

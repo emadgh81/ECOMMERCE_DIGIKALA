@@ -6,9 +6,9 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { UpdateSellerDto } from './dto/update-seller.dto';
-import { SELLER_REPOSITORY } from 'src/common/interfaces/seller_repository.interface';
+import { SELLER_REPOSITORY } from 'src/common/interfaces/Users/seller.repository.interface';
 import { SellerPostgresRepository } from './repository/seller.repository';
-import { USER_REPOSITORY } from 'src/common/interfaces/user_repository.interface';
+import { USER_REPOSITORY } from 'src/common/interfaces/Users/user.repository.interface';
 import { UserPostgresRepository } from '../user/repository/user.repository';
 import { CreateSellerDto } from './dto/create-seller.dto';
 import { RoleEnum } from 'src/common/enum/role.enum';

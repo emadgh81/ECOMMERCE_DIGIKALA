@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { SellerRepository } from 'src/common/interfaces/seller_repository.interface';
+import { SellerRepository } from 'src/common/interfaces/Users/seller.repository.interface';
 import { Seller } from '../entities/seller.entity';
 import { Repository } from 'typeorm';
 
