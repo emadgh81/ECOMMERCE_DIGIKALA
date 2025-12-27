@@ -16,7 +16,7 @@ import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
 import { RolesGuard } from 'src/common/guards/roles.guard';
 import { Roles } from 'src/common/decorators/roles.decorator';
 import { RoleEnum } from 'src/common/enum/role.enum';
-import { AuthRequest } from 'src/common/interfaces/request.interdace';
+import { AuthRequest } from 'src/common/interfaces/request.interface';
 
 @Controller('product')
 export class ProductController {
