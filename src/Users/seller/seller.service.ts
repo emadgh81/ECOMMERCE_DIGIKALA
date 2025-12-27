@@ -6,10 +6,14 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { UpdateSellerDto } from './dto/update-seller.dto';
-import { SELLER_REPOSITORY } from 'src/common/interfaces/Users/seller.repository.interface';
-import { SellerPostgresRepository } from './repository/seller.repository';
-import { USER_REPOSITORY } from 'src/common/interfaces/Users/user.repository.interface';
-import { UserPostgresRepository } from '../user/repository/user.repository';
+import {
+  SELLER_REPOSITORY,
+  SellerRepository,
+} from 'src/common/interfaces/Users/seller.repository.interface';
+import {
+  USER_REPOSITORY,
+  UserRepository,
+} from 'src/common/interfaces/Users/user.repository.interface';
 import { CreateSellerDto } from './dto/create-seller.dto';
 import { RoleEnum } from 'src/common/enum/role.enum';
 import { plainToInstance } from 'class-transformer';
@@ -19,9 +23,9 @@ import { Seller } from './entities/seller.entity';
 export class SellerService {
   constructor(
     @Inject(SELLER_REPOSITORY)
-    private readonly sellerRepo: SellerPostgresRepository,
+    private readonly sellerRepo: SellerRepository,
     @Inject(USER_REPOSITORY)
-    private readonly userRepo: UserPostgresRepository,
+    private readonly userRepo: UserRepository,
   ) {}
   async create(userId: string, createSellerDto: CreateSellerDto) {
     const user = await this.userRepo.findById(userId);
