@@ -20,10 +20,10 @@ export class ProductVariant {
   @Column({ type: 'uuid' })
   product_id!: string;
 
-  @Column({ type: 'int' })
-  sku!: number;
+  @Column({ type: 'varchar', length: 100 })
+  sku!: string;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'decimal' })
   price!: number;
 
   @Column({ type: 'int' })
