@@ -9,7 +9,7 @@ export interface ProductCategoryAttributeRepository {
   findByCategoryAndAttribute(
     productCategoryId: string,
     productAttributeId: string,
-  ): Promise<ProductCategoryAttribute | null>;
+  ): Promise<ProductCategoryAttribute[]>;
   createAndSave(
     productCategoryAttribute: Partial<ProductCategoryAttribute>,
   ): Promise<ProductCategoryAttribute>;
