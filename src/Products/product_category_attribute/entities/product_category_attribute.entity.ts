@@ -23,7 +23,7 @@ export class ProductCategoryAttribute {
   product_attribute_id!: string;
 
   @Column({ type: 'boolean' })
-  is_requierd!: boolean;
+  is_required!: boolean;
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at!: Date;
