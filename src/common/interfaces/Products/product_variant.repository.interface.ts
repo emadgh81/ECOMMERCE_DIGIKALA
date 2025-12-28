@@ -9,5 +9,5 @@ export interface ProductVariantRepository {
     productVariant: Partial<ProductVariant>,
   ): Promise<ProductVariant>;
   save(productVariant: ProductVariant): Promise<ProductVariant>;
-  remove(productVariant: ProductVariant): Promise<ProductVariant>;
+  remove(productVariant: ProductVariant): Promise<void>;
 }
