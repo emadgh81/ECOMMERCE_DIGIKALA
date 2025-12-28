@@ -7,7 +7,7 @@ export interface ProductAttributeValueRepository {
   findByProductAndAttribute(
     productId: string,
     productAttributeId: string,
-  ): Promise<ProductAttributeValue | null>;
+  ): Promise<ProductAttributeValue[]>;
   createAndSave(
     prodcutAttributeValue: Partial<ProductAttributeValue>,
   ): Promise<ProductAttributeValue>;
