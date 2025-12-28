@@ -1,13 +1,13 @@
-import { IsOptional, IsString } from 'class-validator';
+import { IsOptional, IsString, IsUUID } from 'class-validator';
 
 export class CreateProductAttributeValueDto {
-  @IsString()
+  @IsUUID()
   product_id!: string;
 
-  @IsString()
+  @IsUUID()
   product_attribute_id!: string;
 
-  @IsString()
+  @IsUUID()
   product_attribute_option_id!: string;
 
   @IsString()
