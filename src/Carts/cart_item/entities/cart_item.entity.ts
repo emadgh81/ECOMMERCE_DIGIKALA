@@ -32,9 +32,9 @@ export class CartItem {
 
   @ManyToOne(() => Cart, (cart) => cart.items, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'cart_id' })
-  cart!: Cart;
+  cart?: Cart;
 
   @ManyToOne(() => ProductVariant)
   @JoinColumn({ name: 'product_variant_id' })
-  product_variant!: ProductVariant;
+  product_variant?: ProductVariant;
 }
