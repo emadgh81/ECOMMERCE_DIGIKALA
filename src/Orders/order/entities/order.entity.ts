@@ -37,14 +37,14 @@ export class Order {
 
   @ManyToOne(() => User, (user) => user.orders)
   @JoinColumn({ name: 'user_id' })
-  user!: User;
+  user?: User;
 
   @OneToMany(() => Payment, (payment) => payment.order)
-  payments!: Payment[];
+  payments?: Payment[];
 
   @OneToMany(() => Transaction, (transaction) => transaction.order)
-  transactions!: Transaction[];
+  transactions?: Transaction[];
 
   @OneToMany(() => OrderItem, (items) => items.order)
-  items!: OrderItem[];
+  items?: OrderItem[];
 }
