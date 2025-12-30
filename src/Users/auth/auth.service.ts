@@ -45,7 +45,7 @@ export class AuthService {
     if (!isMatch) throw new UnauthorizedException(`invalid credentials`);
 
     const payload: JwtPayload = {
-      userId: user.id,
+      id: user.id,
       email: user.email,
       role: user.role,
     };

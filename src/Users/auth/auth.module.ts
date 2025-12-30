@@ -6,8 +6,6 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtStrategy } from './strategies/jwt.strategi';
-import { USER_REPOSITORY } from 'src/common/interfaces/Users/user.repository.interface';
-import { UserPostgresRepository } from '../user/repository/user.repository';
 
 @Module({
   imports: [
@@ -23,11 +21,7 @@ import { UserPostgresRepository } from '../user/repository/user.repository';
     }),
   ],
   controllers: [AuthController],
-  providers: [
-    AuthService,
-    JwtStrategy,
-    { provide: USER_REPOSITORY, useClass: UserPostgresRepository },
-  ],
+  providers: [AuthService, JwtStrategy],
   exports: [AuthService, JwtModule],
 })
 export class AuthModule {}
