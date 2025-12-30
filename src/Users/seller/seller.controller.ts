@@ -28,7 +28,7 @@ export class SellerController {
     @Body() createSellerDto: CreateSellerDto,
     @Req() req: { user: JwtPayload },
   ) {
-    return this.sellerService.create(req.user.userId, createSellerDto);
+    return this.sellerService.create(req.user.id, createSellerDto);
   }
 
   @Get()
@@ -37,14 +37,14 @@ export class SellerController {
     return this.sellerService.findAll();
   }
 
+  @Get('me')
+  findByUserId(@Req() req: { user: JwtPayload }) {
+    return this.sellerService.findByUserId(req.user.id);
+  }
+
   @Get(':id')
   findById(@Param('id') id: string) {
     return this.sellerService.findById(id);
-  }
-
-  @Get('my/stores')
-  findByUserId(@Req() req: { user: JwtPayload }) {
-    return this.sellerService.findByUserId(req.user.userId);
   }
 
   @Patch(':id')
@@ -54,12 +54,12 @@ export class SellerController {
     @Req() req: { user: JwtPayload },
     @Body() updateSellerDto: UpdateSellerDto,
   ) {
-    return this.sellerService.update(id, req.user.userId, updateSellerDto);
+    return this.sellerService.update(id, req.user.id, updateSellerDto);
   }
 
   @Delete(':id')
   @Roles(RoleEnum.SELLER)
   remove(@Param('id') id: string, @Req() req: { user: JwtPayload }) {
-    return this.sellerService.remove(id, req.user.userId);
+    return this.sellerService.remove(id, req.user.id);
   }
 }
