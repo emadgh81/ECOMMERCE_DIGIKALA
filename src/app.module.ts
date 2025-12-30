@@ -18,6 +18,8 @@ import { ProductModule } from './Products/product/product.module';
 import { CartItemModule } from './Carts/cart_item/cart_item.module';
 import { CartModule } from './Carts/cart/cart.module';
 import { ProductCategoryModule } from './Products/product_category/product_category.module';
+import { ProductAttributeOptionModule } from './Products/product_attribute_option/product_attribute_option.module';
+import { ProductVariantAttributeModule } from './Products/product_variant_attribute/product_variant_attribute.module';
 
 @Module({
   imports: [
@@ -52,6 +54,8 @@ import { ProductCategoryModule } from './Products/product_category/product_categ
     PaymentGatewayModule,
     ProductAttributeValueModule,
     ProductCategoryAttributeModule,
+    ProductAttributeOptionModule,
+    ProductVariantAttributeModule,
     ProductAttributeModule,
     ProductVariantModule,
   ],
