@@ -19,7 +19,7 @@ export class SellerPostgresRepository implements SellerRepository {
   }
 
   findByUserId(userId: string) {
-    return this.sellerRepo.find({ where: { user_id: userId } });
+    return this.sellerRepo.findOne({ where: { user_id: userId } });
   }
 
   createAndSave(seller: Partial<Seller>) {

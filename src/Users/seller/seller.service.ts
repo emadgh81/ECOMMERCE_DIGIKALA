@@ -33,8 +33,7 @@ export class SellerService {
     if (!user) throw new NotFoundException(`user not found`);
 
     const exists = await this.sellerRepo.findByUserId(userId);
-    if (exists.length > 0)
-      throw new BadRequestException(`user already have store`);
+    if (exists) throw new BadRequestException(`user already have store`);
 
     const seller = await this.sellerRepo.createAndSave({
       user_id: user.id,
@@ -64,7 +63,7 @@ export class SellerService {
     const seller = await this.sellerRepo.findByUserId(userId);
     if (!seller) throw new NotFoundException(`seller not found`);
 
-    return seller.map((s) => plainToInstance(Seller, s));
+    return plainToInstance(Seller, seller);
   }
 
   async update(id: string, userId: string, updateSellerDto: UpdateSellerDto) {
