@@ -20,6 +20,7 @@ import { CartModule } from './Carts/cart/cart.module';
 import { ProductCategoryModule } from './Products/product_category/product_category.module';
 import { ProductAttributeOptionModule } from './Products/product_attribute_option/product_attribute_option.module';
 import { ProductVariantAttributeModule } from './Products/product_variant_attribute/product_variant_attribute.module';
+import { ProductCategory } from './Products/product_category/entities/product_category.entity';
 
 @Module({
   imports: [
@@ -47,6 +48,7 @@ import { ProductVariantAttributeModule } from './Products/product_variant_attrib
     CartModule,
     CartItemModule,
     ProductModule,
+    ProductCategory,
     OrderModule,
     OrderItemModule,
     PaymentModule,
