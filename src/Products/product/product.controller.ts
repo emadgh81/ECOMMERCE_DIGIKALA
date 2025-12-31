@@ -24,9 +24,18 @@ export class ProductController {
 
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(RoleEnum.SELLER)
-  @Post()
-  create(@Req() req: AuthRequest, @Body() createProductDto: CreateProductDto) {
-    return this.productService.create(req.user.id, createProductDto);
+  @Post('category/:categoryId')
+  create(
+    @Req() req: AuthRequest,
+    @Param('categoryId') categoryId: string,
+    @Body()
+    createProductDto: CreateProductDto,
+  ) {
+    return this.productService.create(
+      req.user.id,
+      createProductDto,
+      categoryId,
+    );
   }
 
   @Get()

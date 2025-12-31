@@ -50,18 +50,18 @@ export class Product {
 
   @ManyToOne(() => ProductCategory, (category) => category.products)
   @JoinColumn({ name: 'product_category_id' })
-  product_category!: ProductCategory;
+  product_category?: ProductCategory;
 
   @ManyToOne(() => Seller, (seller) => seller.products)
   @JoinColumn({ name: 'seller_id' })
-  seller!: Seller;
+  seller?: Seller;
 
   @OneToMany(() => ProductVariant, (variant) => variant.product)
-  variants!: ProductVariant[];
+  variants?: ProductVariant[];
 
   @OneToMany(() => Review, (review) => review.product)
-  reviews!: Review[];
+  reviews?: Review[];
 
   @OneToMany(() => ProductAttributeValue, (pav) => pav.product)
-  attribute_values!: ProductAttributeValue[];
+  attribute_values?: ProductAttributeValue[];
 }
