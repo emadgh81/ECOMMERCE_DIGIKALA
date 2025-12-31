@@ -16,7 +16,7 @@ import { RolesGuard } from 'src/common/guards/roles.guard';
 import { Roles } from 'src/common/decorators/roles.decorator';
 import { RoleEnum } from 'src/common/enum/role.enum';
 
-@Controller('category')
+@Controller('product-category')
 export class ProductCategoryController {
   constructor(
     private readonly productcategoryService: ProductCategoryService,

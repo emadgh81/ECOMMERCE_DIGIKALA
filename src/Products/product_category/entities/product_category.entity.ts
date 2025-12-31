@@ -28,8 +28,8 @@ export class ProductCategory {
   deleted_at?: Date;
 
   @OneToMany(() => Product, (product) => product.product_category)
-  products!: Product[];
+  products?: Product[];
 
   @OneToMany(() => ProductCategoryAttribute, (pca) => pca.product_category)
-  attributes!: ProductCategoryAttribute[];
+  attributes?: ProductCategoryAttribute[];
 }
