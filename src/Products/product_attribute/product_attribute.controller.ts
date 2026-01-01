@@ -16,7 +16,7 @@ import { RolesGuard } from 'src/common/guards/roles.guard';
 import { Roles } from 'src/common/decorators/roles.decorator';
 import { RoleEnum } from 'src/common/enum/role.enum';
 
-@Controller('attribute')
+@Controller('product-attribute')
 export class ProductAttributeController {
   constructor(
     private readonly productattributeService: ProductAttributeService,

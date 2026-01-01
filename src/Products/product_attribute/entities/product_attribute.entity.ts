@@ -41,8 +41,8 @@ export class ProductAttribute {
   deleted_at?: Date;
 
   @OneToMany(() => ProductAttributeOption, (option) => option.product_attribute)
-  options!: ProductAttributeOption[];
+  options?: ProductAttributeOption[];
 
   @OneToMany(() => ProductAttributeValue, (value) => value.product_attribute)
-  values!: ProductAttributeValue[];
+  values?: ProductAttributeValue[];
 }
