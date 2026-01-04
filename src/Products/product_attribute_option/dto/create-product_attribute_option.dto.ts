@@ -3,10 +3,6 @@ import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 export class CreateProductAttributeOptionDto {
   @IsString()
   @IsNotEmpty()
-  product_attribute_id!: string;
-
-  @IsString()
-  @IsNotEmpty()
   title!: string;
 
   @IsString()

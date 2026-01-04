@@ -41,5 +41,5 @@ export class ProductAttributeOption {
 
   @ManyToOne(() => ProductAttribute, (attr) => attr.options)
   @JoinColumn({ name: 'product_attribute_id' })
-  product_attribute!: ProductAttribute;
+  product_attribute?: ProductAttribute;
 }

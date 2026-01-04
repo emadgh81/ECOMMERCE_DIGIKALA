@@ -16,7 +16,7 @@ import { RolesGuard } from 'src/common/guards/roles.guard';
 import { Roles } from 'src/common/decorators/roles.decorator';
 import { RoleEnum } from 'src/common/enum/role.enum';
 
-@Controller('attribute-option')
+@Controller('product-attribute-option')
 export class ProductAttributeOptionController {
   constructor(
     private readonly productattributeOptionService: ProductAttributeOptionService,
@@ -47,12 +47,12 @@ export class ProductAttributeOptionController {
 
   @Get('by-attribute/:attributeId')
   findByAttribute(@Param('attributeId') attributeId: string) {
-    return this.productattributeOptionService.findById(attributeId);
+    return this.productattributeOptionService.findByAttribute(attributeId);
   }
 
   @Get('by-code/:code')
   findByCode(@Param('code') code: string) {
-    return this.productattributeOptionService.findById(code);
+    return this.productattributeOptionService.findByCode(code);
   }
 
   @Patch(':id')
