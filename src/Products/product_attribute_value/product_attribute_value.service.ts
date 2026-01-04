@@ -26,7 +26,7 @@ export class ProductAttributeValueService {
         createProductAttributeValueDto.product_attribute_id,
       );
 
-    if (exists) {
+    if (exists.length > 0) {
       throw new BadRequestException(
         'attribute value already exists for this product',
       );

@@ -33,16 +33,6 @@ export class ProductAttributeValueController {
     );
   }
 
-  @Get(':id')
-  findById(@Param('id') id: string) {
-    return this.productAttributeValueService.findById(id);
-  }
-
-  @Get('/product/:productId')
-  findByProduct(@Param('productId') productId: string) {
-    return this.productAttributeValueService.findByProduct(productId);
-  }
-
   @Get('/product/:productId/attribute/:attributeId')
   findByProductAndAttribute(
     @Param('productId') productId: string,
@@ -52,6 +42,16 @@ export class ProductAttributeValueController {
       productId,
       attributeId,
     );
+  }
+
+  @Get('/product/:productId')
+  findByProduct(@Param('productId') productId: string) {
+    return this.productAttributeValueService.findByProduct(productId);
+  }
+
+  @Get(':id')
+  findById(@Param('id') id: string) {
+    return this.productAttributeValueService.findById(id);
   }
 
   @Patch(':id')

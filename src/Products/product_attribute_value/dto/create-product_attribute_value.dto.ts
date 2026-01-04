@@ -8,7 +8,8 @@ export class CreateProductAttributeValueDto {
   product_attribute_id!: string;
 
   @IsUUID()
-  product_attribute_option_id!: string;
+  @IsOptional()
+  product_attribute_option_id?: string;
 
   @IsString()
   @IsOptional()

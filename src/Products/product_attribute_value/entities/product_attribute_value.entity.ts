@@ -23,8 +23,8 @@ export class ProductAttributeValue {
   @Column({ type: 'uuid' })
   product_id!: string;
 
-  @Column({ type: 'uuid' })
-  product_attribute_option_id!: string;
+  @Column({ type: 'uuid', nullable: true })
+  product_attribute_option_id?: string;
 
   @Column({ type: 'varchar', length: 100, nullable: true })
   value?: string;
@@ -40,13 +40,13 @@ export class ProductAttributeValue {
 
   @ManyToOne(() => Product, (product) => product.attribute_values)
   @JoinColumn({ name: 'product_id' })
-  product!: Product;
+  product?: Product;
 
   @ManyToOne(() => ProductAttribute)
   @JoinColumn({ name: 'product_attribute_id' })
-  product_attribute!: ProductAttribute;
+  product_attribute?: ProductAttribute;
 
   @ManyToOne(() => ProductAttributeOption)
   @JoinColumn({ name: 'product_attribute_option_id' })
-  product_attribute_option!: ProductAttributeOption;
+  product_attribute_option?: ProductAttributeOption;
 }
