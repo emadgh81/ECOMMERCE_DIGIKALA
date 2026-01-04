@@ -22,10 +22,24 @@ export class ProductVariantAttributePostgresRepository implements ProductVariant
   }
 
   findByVariantAndAttribute(variantId: string, attributeId: string) {
-    return this.productVariantRepo.findOne({
+    return this.productVariantRepo.find({
       where: {
         product_variant_id: variantId,
         product_attribute_id: attributeId,
+      },
+    });
+  }
+
+  findByVariantAttributeAndOption(
+    variantId: string,
+    attributeId: string,
+    optionId: string,
+  ) {
+    return this.productVariantRepo.find({
+      where: {
+        product_variant_id: variantId,
+        product_attribute_id: attributeId,
+        product_attribute_option_id: optionId,
       },
     });
   }

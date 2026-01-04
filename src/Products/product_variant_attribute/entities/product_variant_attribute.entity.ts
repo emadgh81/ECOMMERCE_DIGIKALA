@@ -24,13 +24,13 @@ export class ProductVariantAttribute {
 
   @ManyToOne(() => ProductVariant, (pv) => pv.attributes)
   @JoinColumn({ name: 'product_variant_id' })
-  product_variant!: ProductVariant;
+  product_variant?: ProductVariant;
 
   @ManyToOne(() => ProductAttribute)
   @JoinColumn({ name: 'product_attribute_id' })
-  product_attribute!: ProductAttribute;
+  product_attribute?: ProductAttribute;
 
   @ManyToOne(() => ProductAttributeOption)
   @JoinColumn({ name: 'product_attribute_option_id' })
-  product_attribute_option!: ProductAttributeOption;
+  product_attribute_option?: ProductAttributeOption;
 }

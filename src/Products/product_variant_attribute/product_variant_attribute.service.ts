@@ -23,11 +23,12 @@ export class ProductVariantAttributeService {
     createProductVariantAttributeDto: CreateProductVariantAttributeDto,
   ) {
     const exists =
-      await this.productVariantAttributeRepo.findByVariantAndAttribute(
+      await this.productVariantAttributeRepo.findByVariantAttributeAndOption(
         createProductVariantAttributeDto.product_variant_id,
         createProductVariantAttributeDto.product_attribute_id,
+        createProductVariantAttributeDto.product_attribute_option_id,
       );
-    if (exists)
+    if (exists.length > 0)
       throw new BadRequestException(
         'his attribute already exists for this variant',
       );
