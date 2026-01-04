@@ -9,6 +9,11 @@ export interface ProductVariantAttributeRepository {
     variantId: string,
     attributeId: string,
   ): Promise<ProductVariantAttribute[]>;
+  findByVariantAttributeAndOption(
+    variantId: string,
+    attributeId: string,
+    optionId: string,
+  ): Promise<ProductVariantAttribute[]>;
   createAndSave(
     productVariantAttribute: Partial<ProductVariantAttribute>,
   ): Promise<ProductVariantAttribute>;
