@@ -48,13 +48,13 @@ export class User {
   deleted_at?: Date;
 
   @OneToMany(() => Cart, (cart) => cart.user)
-  carts!: Cart[];
+  carts?: Cart[];
 
   @OneToMany(() => Order, (order) => order.user)
-  orders!: Order[];
+  orders?: Order[];
 
   @OneToMany(() => Review, (review) => review.user)
-  reviews!: Review[];
+  reviews?: Review[];
 
   @OneToOne(() => Seller, (seller) => seller.user)
   seller?: Seller;

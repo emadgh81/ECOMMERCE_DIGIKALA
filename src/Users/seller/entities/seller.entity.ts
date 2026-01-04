@@ -37,8 +37,8 @@ export class Seller {
 
   @ManyToOne(() => User)
   @JoinColumn({ name: 'user_id' })
-  user!: User;
+  user?: User;
 
   @OneToMany(() => Product, (product) => product.seller)
-  products!: Product[];
+  products?: Product[];
 }
