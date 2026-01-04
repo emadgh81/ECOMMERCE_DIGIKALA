@@ -40,8 +40,8 @@ export class ProductVariant {
 
   @ManyToOne(() => Product, (product) => product.variants)
   @JoinColumn({ name: 'product_id' })
-  product!: Product;
+  product?: Product;
 
   @OneToMany(() => ProductVariantAttribute, (pav) => pav.product_variant)
-  attributes!: ProductVariantAttribute[];
+  attributes?: ProductVariantAttribute[];
 }

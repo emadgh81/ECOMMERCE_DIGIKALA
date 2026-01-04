@@ -20,11 +20,17 @@ import { RoleEnum } from 'src/common/enum/role.enum';
 export class ProductVariantController {
   constructor(private readonly productVariantService: ProductVariantService) {}
 
-  @Post()
+  @Post('/product/:productId')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(RoleEnum.ADMIN, RoleEnum.SELLER)
-  create(@Body() createProductVariantDto: CreateProductVariantDto) {
-    return this.productVariantService.create(createProductVariantDto);
+  create(
+    @Param('productId') productId: string,
+    @Body() createProductVariantDto: CreateProductVariantDto,
+  ) {
+    return this.productVariantService.create(
+      productId,
+      createProductVariantDto,
+    );
   }
 
   @Get(':id')
@@ -34,12 +40,12 @@ export class ProductVariantController {
 
   @Get('/product/:productId')
   findByProduct(@Param('productId') productId: string) {
-    return this.productVariantService.findById(productId);
+    return this.productVariantService.findByProduct(productId);
   }
 
-  @Get(':/sku/:sku')
+  @Get('sku/:sku')
   findBySku(@Param('sku') sku: string) {
-    return this.productVariantService.findById(sku);
+    return this.productVariantService.findBySku(sku);
   }
 
   @Patch(':id')

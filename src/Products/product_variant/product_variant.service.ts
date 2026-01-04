@@ -14,10 +14,16 @@ export class ProductVariantService {
     @Inject(PRODUCT_VARIANT_REPOSITORY)
     private readonly productVariantRepo: ProductVariantRepository,
   ) {}
-  async create(createProductVariantDto: CreateProductVariantDto) {
-    const productVariant = await this.productVariantRepo.createAndSave(
-      createProductVariantDto,
-    );
+  async create(
+    productId: string,
+    createProductVariantDto: CreateProductVariantDto,
+  ) {
+    const productVariant = await this.productVariantRepo.createAndSave({
+      sku: createProductVariantDto.sku,
+      price: createProductVariantDto.price,
+      stock: createProductVariantDto.stock,
+      product_id: productId,
+    });
     return plainToInstance(ProductVariant, productVariant);
   }
 
