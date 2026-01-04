@@ -36,9 +36,9 @@ export class ProductCategoryAttribute {
 
   @ManyToOne(() => ProductCategory, (pc) => pc.attributes)
   @JoinColumn({ name: 'product_category_id' })
-  product_category!: ProductCategory;
+  product_category?: ProductCategory;
 
   @ManyToOne(() => ProductAttribute)
   @JoinColumn({ name: 'product_attribute_id' })
-  product_attribute!: ProductAttribute;
+  product_attribute?: ProductAttribute;
 }
