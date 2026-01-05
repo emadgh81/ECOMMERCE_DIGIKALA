@@ -40,7 +40,7 @@ export class CartController {
 
   @Get('user/:userId')
   findByUser(@Param('userId') userId: string) {
-    return this.cartService.findById(userId);
+    return this.cartService.findByUser(userId);
   }
 
   @Patch(':id')
