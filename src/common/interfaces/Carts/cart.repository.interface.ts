@@ -5,6 +5,7 @@ export interface CartRepository {
   findAll(): Promise<Cart[]>;
   findById(id: string): Promise<Cart | null>;
   findByUser(userId: string): Promise<Cart[]>;
+  findActiveByUser(userId: string): Promise<Cart | null>;
   createAndSave(cart: Partial<Cart>): Promise<Cart>;
   save(cart: Cart): Promise<Cart>;
   remove(cart: Cart): Promise<void>;
