@@ -35,9 +35,9 @@ export class OrderItem {
 
   @ManyToOne(() => Order, (order) => order.items, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'order_id' })
-  order!: Order;
+  order?: Order;
 
   @ManyToOne(() => ProductVariant)
   @JoinColumn({ name: 'product_variant_id' })
-  product_variant!: ProductVariant;
+  product_variant?: ProductVariant;
 }
