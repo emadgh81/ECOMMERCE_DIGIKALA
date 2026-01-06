@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { CartRepository } from 'src/common/interfaces/Carts/cart.repository.interface';
 import { Cart } from '../entities/cart.entity';
 import { Repository } from 'typeorm';
+import { CartEnum } from 'src/common/enum/cart.enum';
 
 @Injectable()
 export class CartPostgresRepository implements CartRepository {
@@ -20,6 +21,15 @@ export class CartPostgresRepository implements CartRepository {
 
   findByUser(userId: string) {
     return this.cartRepo.find({ where: { user_id: userId } });
+  }
+
+  findActiveByUser(userId: string) {
+    return this.cartRepo.findOne({
+      where: {
+        user_id: userId,
+        status: CartEnum.ACTIVE,
+      },
+    });
   }
 
   createAndSave(cart: Partial<Cart>) {
